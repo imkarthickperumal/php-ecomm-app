@@ -22,7 +22,7 @@ mysqli_free_result($result);
 // close conncetion
 mysqli_close($conn);
 
-print_r($pizza);
+// print_r($pizza);
 
 ?>
 
@@ -30,6 +30,28 @@ print_r($pizza);
 <html lang="en">
 
 <?php require ('templates/header.php');?>
+
+
+<h4 class="center green-text">Pizza</h4>
+<div class="container">
+    <div class="row">
+        <?php foreach($pizza as $pizzas){?>
+            <div class="col s6 md3">
+                <div class="card z-depth-0">
+                     <div class="card-content center">
+                       <h6><?php echo htmlspecialchars($pizzas['title']);?></h6>
+                       <h6><?php echo htmlspecialchars($pizzas['ingredients']);?></h6>
+                     </div>
+                     <div class="card-action right-align">
+                        <a class="brand-text" href="#">more info</a>
+                     </div>
+                </div>
+            </div>
+        <?php }?>
+    </div>
+</div>
+
+
 <?php require ('templates/footer.php');?>
 
 </html>
