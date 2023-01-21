@@ -8,7 +8,7 @@ if (!$conn) {
 }
 
 // write a query for all pizzas
-$sql = 'SELECT title, ingredients, id FROM pizza';
+$sql = 'SELECT title, ingredients, id FROM pizza ORDER BY created_at';
 
 // make a query & get result
 $result = mysqli_query($conn, $sql);
