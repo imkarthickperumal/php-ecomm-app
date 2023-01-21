@@ -40,7 +40,11 @@ mysqli_close($conn);
                 <div class="card z-depth-0">
                      <div class="card-content center">
                        <h6><?php echo htmlspecialchars($pizzas['title']);?></h6>
-                       <h6><?php echo htmlspecialchars($pizzas['ingredients']);?></h6>
+                       <ul>
+                        <?php foreach(explode(',',$pizzas['ingredients']) as $ing){?>
+                            <li><?php echo htmlspecialchars($ing)?></li>
+                        <?php }?>
+                       </ul>
                      </div>
                      <div class="card-action right-align">
                         <a class="brand-text" href="#">more info</a>
